@@ -1,0 +1,90 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    outline: none;
+    gap: 0.5rem;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Variants */
+.primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.primary:hover:not(:disabled) {
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+.secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.secondary:hover:not(:disabled) {
+    background: var(--text-muted);
+    color: white;
+}
+
+.outline {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.outline:hover:not(:disabled) {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.ghost {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.ghost:hover:not(:disabled) {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Sizes */
+.sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+}
+
+.md {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+}
+
+.lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.125rem;
+}
+
+.loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
